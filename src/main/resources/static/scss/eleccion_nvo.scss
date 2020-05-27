@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap');
+
+
+$font-family: 'Lato', sans-serif;
+$font-size-nav: 1.2em;
+$font-weight-nav: 100;
+
+$primary-color: #893ef1;
+$button-border-color: #6200ee;
+$button-color-over: #6200ee;
+
+$border: 1.5px solid black;
+$border-radius: 5px;
+
+// breakpoint screen widths 
+$large: 1390px; 
+$medium: 767px; 
+$small: 480px;
+
+/*estilos generales*/
+input[type="email"]::placeholder, 
+input[type="number"]::placeholder, 
+input[type="password"]::placeholder, 
+input[type="search"]::placeholder, 
+input[type="text"]::placeholder, 
+input[type="url"]::placeholder, 
+textarea::placeholder {
+    color: #a0a0a0;
+}
+
+*{
+    box-sizing: border-box;
+}
+/*body styles mobile first*/
+body{
+    margin: 0;
+    font-family: $font-family;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: minmax(360px,1fr);
+.body{
+  background-color: #6ff7f0;
+    // background-image: linear-gradient(to right, var(--body_gradient_left), var(--body_gradient_right));
+
+}
+/*responsive para pantalla grande*/
+@media screen and (min-width: $medium){
+    body, .body{
+        display: grid;
+        grid-template-rows: 100px 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'a a'!important
+        'b b'!important
+        ;
+    }
+  
+}
+
+/*header styles*/
+header{
+    // padding: 2rem; 
+    .iso{
+      width: 48px;
+    }
+}
+@media screen and (min-width: $medium){
+    header{
+        grid-area: a;
+        flex-flow: row;  
+        background-color: $primary-color;
+    }
+    .logo{
+      margin-left: 1em;
+    }
+    
+}
+
+
+
+// /NavBar/
+//Color de fondo en el navbar pequeño/
+#mainNav {
+  // min-height: 56px;
+  background-color: $primary-color;
+  font-size: $font-size-nav;
+  font-weight: $font-weight-nav;
+  font-family: $font-family;
+  letter-spacing: .1em;
+  display: flex;
+}
+
+// /Botón desplegable/
+#mainNav .navbar-toggler {
+  font-size: 2em;
+  padding: 0.75rem;
+  color: white;
+  border: none;
+  outline: none;
+}
+// #mainNav .navbar-toggler {
+//   font-size: 2em;
+//   padding: 0.75rem;
+//   color: white;
+// }
+// // /Botón desplegable/
+// #mainNav .navbar-toggler:focus {
+//   opacity: 100%;
+// }
+
+.logo {
+  color: #fff;
+  font-size: 2em;
+  font-family: 'Nunito', sans-serif;
+}
+.logo:hover, .logo:focus{
+  text-decoration: none;
+  color: white;
+}
+// /*Color del background donde está el elemento
+// en pantalla grande*/
+// #mainNav .navbar-nav .nav-item:hover {
+//   color: fade(white, 80%);
+//   outline: none;
+//   background-color: transparent;
+// }
+
+// #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+//   outline: none;
+//   background-color: transparent;
+//   color: red;
+// }
+
+//centra los link del nav
+// .navbar-light .navbar-nav .nav-link {
+//     text-align: center;
+// }
+
+// // /Color que toma cuando queda seleccionado/
+// .navbar-light .navbar-nav .nav-link:hover {
+//     color: red;
+// }
+
+// /Color que toma cuando se clickea/
+// .navbar-light .navbar-nav .nav-link:active {
+//     color: red;
+// }
+
+// /Lupita/
+// svg:not(:root) {
+//   overflow: hidden;
+  
+// }
+
+// /Cuando la pantalla es grande/
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    // transition: background-color 0.3s ease-in-out;
+  }
+  .logo{
+    margin-left: 1em;
+  }
+}
+
+// //   /Color de la marca/
+//   #mainNav .navbar-brand {
+//     padding: .5rem 0;
+//     color: rgba(255, 255, 255, 0.5);
+//   }
+
+///Color de los items/
+  #mainNav .nav-link {
+    // transition: none;
+    margin: 0;
+    padding: .5em;
+    color: white;
+    text-align: center;
+    
+  }
+  @media (min-width: 992px) {
+    #mainNav .nav-link {
+      margin: 2rem 1.5rem;
+      padding: 0;
+    }
+  }
+///Color que toma cuando se pasa el mousse arriba, no se por qué pero funciona sólo en pantalla grande/
+  #mainNav .nav-link:hover {
+    font-weight: 400;
+  }
+
+// ///Color cuando se clickea/
+//   #mainNav .nav-link:active {
+//     color: red;
+//   }
+
+///Elemento para que se condense/
+  // #mainNav.navbar-shrink {
+  //   background-color: #fff;
+  // }
+  // #mainNav.navbar-shrink .navbar-brand {
+  //   color: white;
+  // }
+  // #mainNav.navbar-shrink .nav-link {
+  //   color: white;
+  //   padding: 1.5rem 1.5rem 1.25rem;
+  // }
+  // #mainNav.navbar-shrink .nav-link:hover {
+  //   color: white;
+  // }
+  // #mainNav.navbar-shrink .nav-link:active {
+  //   color: white;
+  // }
+  // #mainNav.navbar-shrink .nav-link.active {
+  //   color: white;
+  //   outline: none;
+  // }
+// .search-icon {
+//     fill: #333;
+//     height: 1.5vmax;
+//     margin: .5em;
+//   }
+    
+    /*main section*/
+    main{
+      // background-color: rgb(209, 209, 248);
+      margin: 0;
+      padding: 0;
+      grid-row-start: 2;
+      // display: grid;
+      // grid-template-columns: repeat(5, 1fr);
+      // grid-template-rows: repeat(4, 1fr);
+      // grid-template-areas: 
+      // "s4 s4 s4 s4 s4"
+      // "s2 s2 s2 s2 s2"
+      // "s3 s3 s3 s3 s3"
+      // "s1 s1 s1 s1 s1";
+      
+  }
+  @media screen and (min-width: 800px){
+      main{
+          
+    // padding: 2rem;
+        padding: 10vmax;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-gap: 1em;
+        grid-template-areas: 
+        'a a'
+        'b c';
+    }
+}
+
+  section{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-size: 1em;
+    img{
+        max-width: 30vmax;
+    }
+    button{
+        font-family: $font-family;
+        font-size: .875rem;
+        font-weight: 500;
+        letter-spacing: .0892857143em;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 2px;
+        border-color:  $primary-color;
+        min-width: 64px;
+        height: 36px;
+        margin: 1.5em;
+        padding: 0 15px;
+        background-color: #fff;
+        align-self: center;
+        a{
+            text-decoration: none;
+            color: black;
+            
+        }
+        a:hover{
+            color: #FFF;
+        }
+        .nav-link{
+            align-items: center;
+        }
+    }
+    button:hover,
+    button:focus {
+        outline: none;
+        background: $primary-color;
+        color: #FFF;
+    }
+    .entra{
+        margin-top: 1em;
+        background:  $primary-color;
+        color: #FFF;
+    }
+}
+
+
+//     button{
+//         background:none;
+//         border: 2px solid #f13b1b;
+//         border-radius:50px;
+//         font-size:1em;
+//         font-weight: 400;
+//         padding:1em 1.5em;
+//         color: #f13b1b;
+//         cursor:pointer;
+//         position:relative;
+//         overflow:hidden;
+//         transition:.2s ease-in-out;
+//         z-index:2;
+//         &:hover{
+//         color:#fff;
+//         }
+//         &:before{
+//         position:absolute;
+//         left:calc(-100%);
+//         top:0;
+//         width:100%;
+//         height:100%;
+//         content:'';
+//         color:#fff;
+//         background:#f13b1b;
+//         transition:.2s ease all;
+//         z-index:-1;
+//         }
+
+//         &:hover:before{
+//         top:0;
+//         left:0%;
+//         width:100%;
+//         height:100%;
+//         }
+//     }
+// }
+
+.pregunta{
+grid-area: a;
+background-color: #fff;
+text-align: center;
+}
+.solicitar{
+// background-color: violet;
+grid-area: b;
+}
+.compartir{
+// background-color: yellowgreen;
+grid-area: c;
+}
+.opcion{
+    font-size: 1.2em;
+border-radius: 2px;
+padding: 1em;
+margin: auto;
+width: fit-content;
+text-align: center;
+}}
+@media screen and (min-width: 800px){
+    section .opcion{
+        font-size: 2em;
+    }
+}
+// footer{
+// grid-area: c;
+// background-color:#f13b1b;
+// }

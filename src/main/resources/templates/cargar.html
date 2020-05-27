@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#AYUDAR#</title>
+    <!-- semantic -->
+    <link rel="stylesheet" type="text/css" href="styles/semantic.css">
+    <!-- material -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+    <!-- mis horrendos estilos -->
+    <link rel="stylesheet" href="css/material.css">
+    <link rel="stylesheet" href="css/semantic.css">
+    <!-- font awesome icons -->
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet"> -->
+    <!-- bootstrap -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+</head>
+<body class="body">
+    
+    <!-- <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">search</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">thumb_up</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">person</button>
+                
+            </section>
+        </div>
+    </header> -->
+    <!-- <header>
+        
+        <div class="logo">
+            <svg class="fas fa-infinity"></svg>
+        </div>
+        <nav>
+            <form class="header-search" id="nav-main-search" action="/" method="get" role="search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 28" aria-hidden="true" class="search-icon">
+                    <path d="M18 13c0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7 7-3.141 7-7zm8 13c0 1.094-.906 2-2 2a1.96 1.96 0 0 1-1.406-.594l-5.359-5.344a10.971 10.971 0 0 1-6.234 1.937c-6.078 0-11-4.922-11-11s4.922-11 11-11 11 4.922 11 11c0 2.219-.672 4.406-1.937 6.234l5.359 5.359c.359.359.578.875.578 1.406z"></path>
+                </svg>
+                <label for="main-q" class="visually-hidden">Buscar en MDN</label>
+                <input type="search" class="search-input-field" id="main-q" name="q" placeholder="Buscá eso que querés encontrar..." pattern="(.|\s)*\S(.|\s)*" required="">
+            </form>
+        <div>
+            <button></button>
+            <button></button>
+            <button type="menu"></button>
+        </div>
+        </nav>
+    </header> -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a href=""><img class="iso" src="img/Sin título-1.svg" alt=""></a>
+              <!-- <a id="logo" class="navbar-brand js-scroll-trigger" href="#page-top">Ayudar</a>
+               -->
+              <a class="logo" href="#page-top">Ayudar</a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse navbar-collapse-right" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" id="item" href="/logout">Cerrar Sesión</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+            <form action="/carga" id="" method="POST"  enctype="multipart/form-data">
+                <h1>Carguemos algo</h1>
+                <ul>
+                    <li>
+                        <label for="categoria">¿Se trata de un producto o un servicio?</label>
+                        <select id="categoria" name="tipoOperacion">
+                          <option value=''></option>
+                          <option value='Producto'>Productos</option>
+                          <option value='Servicio'>Servicios</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="subcategoria">Elegí una categoría para que encuentren mejor tu oferta:</label>
+                        <select id="subcategoria" name="categoria">
+                          <option value=''></option>
+                          <option value='ropa'>Ropa</option>
+                          <option value='matesco'>Material escolar</option>
+                          <option value='alimentos'>Alimentos</option>
+                          <option value='bazar'>Bazar</option>
+                          <option value='mat_const'>Material de construcción</option>
+                          <option value='muebles'>Muebles</option>
+                          <option value='electrodomésticos'>Electrodomésticos</option>
+                          <option value='otros'>Otros</option>
+                        </select>
+                      </li>
+                    <li>
+                        <label for="myName">¿Qué querés ofrecer?</label>
+                        <input class="input" placeholder="Título breve..." type="text" id="comment" name="titulo" autocapitalize="sentences" spellcheck="true" maxlength="50">
+                    </li>
+                    <li>
+                        <label for="myName">Descripción</label>
+                        <textarea class="input" placeholder="Comentá algunas características..." type="text" id="comment" name="comentario" rows="5"></textarea>
+                    </li>
+                    <li>
+                        <label for="myName">Cargá al menos una imagen</label>
+                        <div class="recuadro"></div>
+                        <input  type="file" name="archivo" id="file"/>
+                    </li>
+                    <li>
+                        <button class="button" type="submit">Cargar</button>
+                    </li>
+                </ul>
+            </form>
+        
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+</body>
+</html>

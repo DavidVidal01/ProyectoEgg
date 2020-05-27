@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+
+:root {
+    --body_gradient_left: #0095d0;
+    --body_gradient_right: #00c885;
+}
+
+$font-family: 'Lato', sans-serif;
+$primary-color: #6200ee;
+$button-border-color: #6200ee;
+$button-color-over: #6200ee;
+
+$border: 1.5px solid black;
+$border-radius: 5px;
+
+// breakpoint screen widths 
+$large: 1390px; 
+$medium: 767px; 
+$small: 480px;
+
+/*estilos generales*/
+input[type="email"]::placeholder, 
+input[type="number"]::placeholder, 
+input[type="password"]::placeholder, 
+input[type="search"]::placeholder, 
+input[type="text"]::placeholder, 
+input[type="url"]::placeholder, 
+textarea::placeholder {
+    color: #a0a0a0;
+}
+
+*{
+    box-sizing: border-box;
+}
+/*body styles mobile first*/
+body{
+    margin: 0;
+    font-family: $font-family;
+    font-weight: 400;
+    display: flex;
+    flex-flow: column;
+}
+.body{
+  background-color: #6ff7f0;
+    // background-image: linear-gradient(to right, var(--body_gradient_left), var(--body_gradient_right));
+
+}
+/*responsive para pantalla grande*/
+@media screen and (min-width: $medium){
+    body .body{
+        display: grid;
+        grid-template-rows: 100px 1fr;
+        grid-template-columns: .25fr 1fr;
+        grid-template-areas: 
+        'a a'
+        '. b';
+    }
+}
+
+/*header styles*/
+header{
+    padding: 1rem;
+    display: flex;
+    flex-flow: column; 
+    background-color: rgb(164, 48, 241);
+    
+    .iso{
+      width: 48px;
+    }
+}
+@media screen and (min-width: $medium){
+    header{
+        grid-area: a;
+        flex-flow: row;  
+    .logo{
+      margin-left: 1em;
+    }
+    
+}
+
+  
+  // /Botón desplegable/
+  nav button {
+    font-size: 2em;
+    padding: 0.75rem;
+    color: white;
+    border: none;
+  }
+  
+  // /Botón desplegable/
+  #mainNav .navbar-toggler:focus {
+    outline: none;
+  }
+  
+  // /Color de la marca/
+
+  @import url('https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap');
+  .logo {
+    color: #fff;
+    font-size: 2em;
+    font-family: 'Nunito', sans-serif;
+  }
+  /*Color del background donde está el elemento
+  en pantalla grande*/
+  #mainNav .navbar-nav .nav-item:hover {
+    color: fade(white, 80%);
+    outline: none;
+    background-color: transparent;
+  }
+  
+  #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+    outline: none;
+    background-color: transparent;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+      color: antiquewhite;
+      text-align: center;
+  }
+  
+  // /Color que toma cuando queda seleccionado/
+  .navbar-light .navbar-nav .nav-link:hover {
+      color: green;
+  }
+  
+  // /Color que toma cuando se clickea/
+  .navbar-light .navbar-nav .nav-link:active {
+      color: red;
+  }
+  
+  // /Lupita/
+  svg:not(:root) {
+    overflow: hidden;
+    
+  }
+  
+  // /Cuando la pantalla es grande/
+  @media (min-width: 992px) {
+    #mainNav {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      // transition: background-color 0.3s ease-in-out;
+    }
+  }
+  
+  //   /Color de la marca/
+    #mainNav .navbar-brand {
+      padding: .5rem 0;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  
+  //   /Color de los items/
+    #mainNav .nav-link {
+      transition: none;
+      margin: 2rem 1.5rem;
+      color: white;
+    }
+  
+  //   /Color que toma cuando se pasa el mousse arriba/
+    #mainNav .nav-link:hover {
+      color: green;
+    }
+  
+  //   /Color cuando se clickea/
+    #mainNav .nav-link:active {
+      color: red;
+    }
+  
+  //   /Elemento para que se condense/
+    #mainNav.navbar-shrink {
+      background-color: #fff;
+    }
+    #mainNav.navbar-shrink .navbar-brand {
+      color: white;
+    }
+    #mainNav.navbar-shrink .nav-link {
+      color: white;
+      padding: 1.5rem 1.5rem 1.25rem;
+    }
+    #mainNav.navbar-shrink .nav-link:hover {
+      color: white;
+    }
+    #mainNav.navbar-shrink .nav-link:active {
+      color: white;
+    }
+    #mainNav.navbar-shrink .nav-link.active {
+      color: white;
+      outline: none;
+    }
+  .search-icon {
+      fill: #333;
+      height: 1.5vmax;
+      margin: .5em;
+    }
+      
+  /*main section*/
+  main{
+    // background-color: rgb(209, 209, 248);
+    margin: 0;
+    padding: 0;
+    // display: grid;
+    // grid-template-columns: repeat(5, 1fr);
+    // grid-template-rows: repeat(4, 1fr);
+    // grid-template-areas: 
+    // "s4 s4 s4 s4 s4"
+    // "s2 s2 s2 s2 s2"
+    // "s3 s3 s3 s3 s3"
+    // "s1 s1 s1 s1 s1";
+}
+@media screen and (min-width: 800px){
+    main{
+        grid-area: b;
+        // padding: 2rem;
+        padding: 10vmax;
+    }
+}
+
+/*form styles start here*/
+form{
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #eceff1;
+    padding: 1em;
+    margin: 2em;
+    display: flex;
+    flex-flow: column;
+    font-size: 1em;
+    box-shadow: 0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
+    h1{
+        font-size: 1.5em;
+        padding: 1rem;
+        margin: 0;
+    }
+    ul{
+        list-style: none;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        display: flex;
+        flex-flow: column;
+        padding: 1em;
+        li{
+            display: flex;
+            flex-flow: column;
+            margin-bottom: 1em;
+            label{
+                margin-bottom: 1em;
+            }
+            textarea {
+                overflow: auto;
+            }
+            .input, textarea{
+                border-radius: 5px;
+                border: 1px solid #cac9c9;
+            }
+            .input:focus, textarea:focus {
+                background   : #fff;
+                border-radius: 5px;
+                border: 1px solid $button-color-over;
+            }
+            
+            
+        }
+    }
+    button{
+        font-family: Roboto,sans-serif;
+        font-size: .875rem;
+        font-weight: 500;
+        letter-spacing: .0892857143em;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1.5px;
+        border-color: $button-border-color;
+        min-width: 64px;
+        height: 36px;
+        margin-top: 2em;
+        padding: 0 15px;
+        background-color: #fff;
+        align-self: center;
+    }
+    button:hover,
+    button:focus {
+        outline: none;
+        background: $primary-color;
+        color: #FFF;
+    }
+}
+
+
+}

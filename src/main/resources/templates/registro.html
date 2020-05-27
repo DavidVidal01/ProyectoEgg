@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/registroBien.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>#AYUDAR#</title>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <h1 class="bienvenidos">Bienvenidx</h1>
+        <form action="/registrar" method="POST"  enctype="multipart/form-data">
+          <ul>
+            <li>
+              <label for="nombre">Nombre</label>
+              <input
+                placeholder="Nombre"
+                type="text"
+                name="nombre"
+                id="nombre"
+                class="input_field"
+              />
+            </li>
+            <li>
+              <label for="apellido">Apellido</label>
+              <input
+                placeholder="Apellido"
+                type="text"
+                name="apellido"
+                id="apellido"
+                class="input_field"
+              />
+            </li>
+            <li>
+              <label for="dni">DNI</label>
+              <input
+                placeholder="DNI"
+                type="text"
+                name="dni"
+                id="dni"
+                class="input_field"
+                required
+              />
+            </li>
+            <li class="checkbox">
+              <label for="sexo">Género</label>
+              <select id="sexo" name="sexo">
+                <option value='HOMBRE'>Hombre</option>
+                <option value='MUJER'>Mujer</option>
+                <option value='OTRO'>Otro</option>
+              </select>
+            </li>
+            <li>
+              <label for="departamentos">Departamentos</label>
+              <select id="departamentos" name="departamentos">
+                <option value='CAPITAL'>CAPITAL</option>
+                <option value='GUAYMALLEN'>GUAYMALLEN</option>
+                <option value='GODOY_CRUZ'>GODOY CRUZ</option>
+                <option value='LAS_HERAS'>LAS HERAS</option>
+                <option value='LUJAN_DE_CUYO'>LUJAN DE CUYO</option>
+                <option value='MAIPU'>MAIPU</option>
+              </select>
+            </li>
+            <li>
+              <label for="calle">Dirección</label>
+              <input placeholder="Nombre Calle" type="text" name="calle" id="calle" class="input_field">
+            </li>
+            <li>
+              <label for="nro">Número</label>
+              <input placeholder="Número Calle" type="text" name="nro" id="nro"  class="input_field">
+            </li>
+            <li>
+              <label for="tel">Teléfono</label>
+              <input placeholder="Teléfono" type="tel" name="tel" id="tel" class="input_field">
+            </li>
+            <li>
+              <label for="mail">Email</label>
+              <input
+                placeholder="Email"
+                type="email"
+                name="mail"
+                id="mail"
+                class="input_field"
+              />
+            </li>
+            <li>
+              <label for="archivo">Cargá al menos una imagen tuya</label>
+              <div class="recuadro"></div>
+              <input  type="file" name="archivo" id="archivo" />
+            </li>
+            <li>
+              <label for="nombre">Contraseña</label>
+              <input
+                placeholder="Contraseña"
+                type="password"
+                name="clave"
+                id="pass"
+                class="input_field"
+                required
+                minlength="6"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+              />
+            </li>
+            <li>
+              <label for="nombre">Confirmar contraseña</label>
+              <input
+                placeholder="Confirmar contraseña"
+                type="password"
+                name="clave2"
+                id="pass2"
+                class="input_field"
+                required
+                minlength="6"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+              />
+            </li>
+        
+          </ul>
+          <fieldset>
+            <label for="term">Acepto términos y condiciones</label>
+            <input class="circulo" type="radio" name="term" id="term">
+          </fieldset>
+          <button type="submit" id="button-submit">
+            UNIRSE
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

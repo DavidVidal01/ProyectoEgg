@@ -1,0 +1,109 @@
+:root {
+  --body_gradient_left:#7200D0;
+  --body_gradient_right: #C800C1;
+  --form_bg: #ffffff;
+  --input_bg: #E5E5E5;
+  --input_hover:#eaeaea;
+  --submit_bg: #1FCC44;
+  --submit_hover: #40e263;
+  --icon_color:#6b6b6b;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-gap: 1rem;
+      grid-template-areas: "a b";
+  font-family: "Lato", sans-serif;
+}
+
+section {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b;
+  background-color: #369494;
+}
+
+section form {
+  /* Center the form on the page */
+  margin: 40px;
+  background: #eeeeee;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+section form ul {
+  list-style: none;
+}
+
+section form ul li {
+  margin-top: 1em;
+}
+
+section form ul li label {
+  text-align: left;
+  display: inline-block;
+}
+
+section form ul li label input {
+  margin-top: 0.5em;
+  display: block;
+  font-size: 1em;
+  border: 1px solid #000000;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+section form ul li label input:focus {
+  border-color: #000;
+}
+
+section form ul li button:hover,
+section form ul li button:focus {
+  outline: none;
+  background: #000;
+  color: #fff;
+}
+
+section form ul .enviar {
+  display: block;
+  font-size: 1em;
+  border: 1px solid #000000;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+section form ul .redirigir {
+  display: block;
+  font-size: 1em;
+  border: 1px solid #000000;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: red;
+  border-radius: 10px;
+}
+
+aside {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a;
+}
+/*# sourceMappingURL=login2.css.map */

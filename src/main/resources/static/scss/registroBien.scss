@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap');
+
+
+:root {
+    --body_gradient_left: #0095d0;
+    --body_gradient_right: #00c885;
+    --form_bg: #ffffff;
+    --input_bg: #e5e5e5;
+    --input_hover: #eaeaea;
+    --submit_bg: #0095d0;
+    --submit_hover:#0095d0;
+    --icon_color: #6b6b6b;
+}
+
+$font-family: 'Lato', sans-serif;
+$primary-color: #6200ee;
+$button-border-color: #6200ee;
+$button-color-over: #0095d0;
+
+$border: 1.5px solid black;
+$border-radius: 5px;
+
+// breakpoint screen widths 
+$large: 1390px; 
+$medium: 767px; 
+$small: 480px;
+
+/*estilos generales*/
+input[type="email"]::placeholder, 
+input[type="number"]::placeholder, 
+input[type="password"]::placeholder, 
+input[type="search"]::placeholder, 
+input[type="text"]::placeholder, 
+input[type="url"]::placeholder, 
+textarea::placeholder {
+    color: #a0a0a0;
+    font-size: 1em;
+}
+select::option{
+    color: #a0a0a0;
+    font-size: 1em;
+}
+*{
+    box-sizing: border-box;
+}
+/*body styles mobile first*/
+body,.body{
+    margin: 0;
+    font-family: $font-family;
+    font-weight: 400;
+    background-image: linear-gradient(to right, var(--body_gradient_left), var(--body_gradient_right));
+    display: flex;
+    flex-flow: column;
+}
+/*responsive para pantalla grande*/
+@media screen and (min-width: $medium){
+    body, .body{
+        display: grid;
+        grid-template-columns: .1fr 1fr .1fr;
+        grid-template-areas: 
+        '. b .';
+    }
+}
+
+/*header styles*/
+header{
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;  
+}
+@media screen and (min-width: $medium){
+    header{
+        grid-area: a;
+        flex-flow: row;  
+    }
+}
+// input[type="search"]{
+//     background-color: #fff;
+//     border: $border;
+//     border-radius: $border-radius;
+// }
+.header-search {
+    display: flex;
+    flex: 2 1;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2px 8px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    height: 40px;
+    min-width: 80px;
+    .search-icon {
+        flex: 0 0 20px;
+        fill: #333;
+    }
+    label.visually-hidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute !important;
+        width: 1px;
+    }
+    input.search-input-field {
+        flex: 1 1 100px;
+        color: #333;
+        border: none;
+        font-size: 14px;
+        min-width: 60px;
+    }
+}
+
+  /*main section*/
+  main{
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    // display: grid;
+    // grid-template-columns: repeat(5, 1fr);
+    // grid-template-rows: repeat(4, 1fr);
+    // grid-template-areas: 
+    // "s4 s4 s4 s4 s4"
+    // "s2 s2 s2 s2 s2"
+    // "s3 s3 s3 s3 s3"
+    // "s1 s1 s1 s1 s1";
+    /*section?*/
+    section {
+        width: auto;
+        height: auto;
+        /* this will help us center it*/
+        /* make it a grid container*/
+        // display: grid;
+        // /* with two columns of same width*/
+        // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        // /* with a small gap in between them*/
+        // grid-gap: 5vw;
+        // /* add some padding around */
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        
+    }
+    }
+@media screen and (min-width: 800px){
+    main{
+        grid-area: b;
+        // padding: 2rem;
+        margin-bottom: 10vmax;
+    }
+}
+
+
+  .bienvenidos{
+    font-size: 2.5em;
+    color: white;
+    letter-spacing: .05em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+/*form styles start here*/
+form{
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #eceff1;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    flex-flow: column;
+    font-size: 1em;
+    box-shadow: 0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
+    h1{
+        font-size: 1.5em;
+        padding: 1rem;
+        margin: 0;
+    }
+    ul{
+        list-style: none;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        display: flex;
+        flex-flow: column;
+        padding: 1em;
+        li{
+            display: flex;
+            flex-flow: column;
+            margin-bottom: 1em;
+            .checkbox{
+                flex-flow: row;
+            }
+            label{
+                margin-bottom: 1em;
+                font-size: 1em;
+            }
+            // textarea {
+            //     overflow: auto;
+            // }
+            input, select{
+                border-radius: 5px;
+                border: 1px solid #cac9c9;
+                padding: 0.5em;
+                font-size: 1em;
+            }
+            input:focus, textarea:focus {
+                background   : #fff;
+                border-radius: 5px;
+                border: 1.2px solid $button-color-over;
+            }
+            select{
+                // appearance: none;
+            }
+            
+        }
+    }
+    button{
+        font-family: Roboto,sans-serif;
+        font-size: .875rem;
+        font-weight: 500;
+        letter-spacing: .0892857143em;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 1.5px;
+        border-color:  #0095d0;
+        min-width: 64px;
+        height: 36px;
+        margin: 1.5em;
+        padding: 0 15px;
+        background-color: #fff;
+        align-self: center;
+        a{
+            text-decoration: none;
+            color: #8b8b8b;
+        }
+        a:hover{
+            color: #FFF;
+        }
+    }
+    button:hover,
+    button:focus {
+        outline: none;
+        background:  #0095d0;
+        color: #FFF;
+    }
+    .entra{
+        margin-top: 1em;
+        background:  #0095d0;
+        color: #FFF;
+    }
+}
+@media screen and (min-width: 800px){
+    form ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5em;
+    }
+    .login{
+        display: flex;
+        flex-flow: column;
+    }
+}
+fieldset{
+    border: none;
+    align-self: center;
+}
+span{
+    font-size: 1em;
+    text-align: center;
+}

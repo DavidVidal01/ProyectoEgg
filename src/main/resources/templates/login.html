@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/registroBien.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>#AYUDAR#</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <main>
+      <!-- <aside>
+        <img src="../proyectoEgg/assets/img/success.png" alt="computer icon" />
+      </aside> -->
+      <section>
+        <h1 class="bienvenidos">Bienvenidx</h1>
+        <form action="/logincheck" method="post">
+          <p th:if="${error != null}" th:text="${error}"></p>
+          <ul class="login">
+            <li>
+              <label for="dni">Usuario</label>
+              <input
+                placeholder="DNI"
+                type="text"
+                name="username"
+                id="dni"
+                class="input_field" required
+              />
+            </li>
+            <li>
+              <label for="pass">Contraseña</label>
+              <input
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                id="pass"
+                class="input_field" required minlength="6" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+              />
+            </li>
+          </ul>
+          <button class="entra" type="submit" id="button-submit">
+            ENTRÁ
+          </button>
+          <span>¿Todavía no formás parte?</span>
+          <button id="button-link"><a href="/registro">UNITE</a></button>
+        </form>
+        
+      </section>
+    </main>
+  </body>
+</html>
